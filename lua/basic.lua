@@ -13,7 +13,7 @@ vim.o.number = true
 vim.o.relativenumber = false
 
 -- 这个会高亮当前行(在原版状态下当前行会有一个下划线)
-vim.o.cursorline = false
+vim.o.cursorline = true
 
 -- tab 相关配置
 vim.o.shiftwidth = 4   -- 按下 tab 4 格宽
@@ -27,3 +27,4 @@ vim.o.backup = false
 
 -- 关闭搜索高亮
 vim.o.hlsearch = false
+

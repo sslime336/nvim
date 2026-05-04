@@ -1,4 +1,5 @@
 -- 文件树
+
 vim.pack.add({
     {
         src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
@@ -10,9 +11,6 @@ vim.pack.add({
     -- optional, but recommended
     "https://github.com/nvim-tree/nvim-web-devicons",
 })
-
--- lsp
-vim.pack.add {
-    { src = 'https://github.com/neovim/nvim-lspconfig' },
-}
-vim.lsp.enable('rust_analyzer')
+vim.keymap.set("n", "<space>b", "<cmd>Neotree toggle<CR>", {
+    silent = true, noremap = true
+})

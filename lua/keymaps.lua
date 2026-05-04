@@ -18,8 +18,6 @@ _Ctrl_s = function()
     -- end
     vim.lsp.buf.format { async = true };
     vim.cmd('w')
-    vim.cmd('set nu rnu')
-    vim.cmd('Trim')
 end
 
 -- 格式化、保存当前文件
@@ -34,3 +32,7 @@ vim.keymap.set('n', '<C-Up>', '<C-w>+', opt)
 vim.keymap.set('n', '<C-Down>', '<C-w>-', opt)
 vim.keymap.set('n', '<C-Left>', '<C-w><', opt)
 vim.keymap.set('n', '<C-Right>', '<C-w>>', opt)
+
+-- 打开终端
+vim.keymap.set('n', '<C-\\>', '<cmd>terminal<CR>i', opt)
+vim.keymap.set('t', '<C-\\>', '<C-d>', opt)
