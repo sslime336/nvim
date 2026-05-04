@@ -16,7 +16,7 @@ _Ctrl_s = function()
     --     vim.cmd [[GoImport]]
     --     vim.cmd [[GoFmt]]
     -- end
-    vim.lsp.buf.format { async = true };
+    vim.lsp.buf.format {};
     vim.cmd('w')
 end
 

@@ -27,4 +27,3 @@ vim.o.backup = false
 
 -- 关闭搜索高亮
 vim.o.hlsearch = false
-
