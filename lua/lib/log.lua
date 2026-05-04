@@ -1,4 +1,5 @@
 -- Copied from: https://github.com/tjdevries/vlog.nvim
+-- 默认日志位置: ~/.local/share/nvim/*.log
 -- log.lua
 --
 -- Inspired by rxi/log.lua
