@@ -27,3 +27,6 @@ vim.o.backup = false
 
 -- 关闭搜索高亮
 vim.o.hlsearch = false
+
+-- 过长的行在显示上换行
+vim.opt.wrap = true
