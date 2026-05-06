@@ -48,3 +48,23 @@ vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<CR>", opt)
 -- Code Action
 vim.keymap.set("n", "<space>j", "<cmd>Lspsaga code_action<CR>", opt)
 vim.keymap.set("v", "<space>j", "<cmd>Lspsaga code_action<CR>", opt)
+
+-- 添加后缀类型提示
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(args)
+        local bufnr = args.buf
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+        -- 检查服务器是否支持 inlay hints
+        if client and client.server_capabilities.inlayHintProvider then
+            -- 映射 <leader>th 来切换 inlay hints
+            vim.keymap.set('n', '<leader>th', function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }), { bufnr = bufnr })
+            end, { buffer = bufnr, desc = 'Toggle Inlay Hints' })
+
+            -- (可选) 默认启用 inlay hints
+            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+        end
+    end,
+})
