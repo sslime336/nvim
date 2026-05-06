@@ -20,13 +20,15 @@ wk.add({
     { '<leader>f', desc = '向后查找' },
     { '<space>b', desc = '打开文件列表' },
 
-    -- `<space>g`: 使用 rg(ripgrep) 在当前路径查找匹配的文件及其内容
-    -- `<space>f`: 在当前路径查找匹配的文件
-    -- `<space>p`: 查找历史 projects
-    -- `<space>b`: 在当前 buffer 中查找
-    -- `<space>m`: 查找书签
-    -- `<leader>b` 开启标签页跳转选择
-    -- `<leader>B` 关闭标签页跳转选择
+    { '<space>b', desc = '打开文件列表' },
+
+    { '<space>g', desc = '使用 rg(ripgrep) 在当前路径查找匹配的文件及其内容' },
+    { '<space>f', desc = '在当前路径查找匹配的文件' },
+    -- { '<space>p', desc = '查找历史 projects' },
+    -- { '<space>b', desc = '在当前 buffer 中查找' },
+    -- { '<space>m', desc = '查找书签' },
+    -- { '<leader>b', desc = '开启标签页跳转选择' },
+    -- { '<leader>B', desc = '关闭标签页跳转选择' },
 
     -- lsp
     { 'gr', desc = '查找引用' },
