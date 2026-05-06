@@ -5,6 +5,7 @@ vim.pack.add {
 }
 local wk = require('which-key')
 -- <leader>: ';'
+-- TODO: 后续使用工具方法直接映射，不用在统一写在这里了
 wk.add({
     {
         "<space>?",
@@ -14,7 +15,6 @@ wk.add({
         desc = "Buffer Local Keymaps (which-key)",
     },
     { "<leader>b", desc = "开启标签页跳转选择" },
-    { "gr", desc = "查找引用" },
     { "<C-\\>", desc = "打开终端" },
     { '<leader>F', desc = '向前查找' },
     { '<leader>f', desc = '向后查找' },
@@ -29,17 +29,6 @@ wk.add({
     -- { '<space>m', desc = '查找书签' },
     -- { '<leader>b', desc = '开启标签页跳转选择' },
     -- { '<leader>B', desc = '关闭标签页跳转选择' },
-
-    -- lsp
-    { 'gr', desc = '查找引用' },
-    { 'gp', desc = '跳转到上一个报错/警告的地方' },
-    { 'gn', desc = '跳转到下一个报错/警告的地方' },
-    { 'gd', desc = '弹出窗口查看定义' },
-    { 'gD', desc = '跳转到定义' },
-    { '<C-k>', desc = '显示变量/函数等的信息' },
-    { '<space>dw', desc = '显示当前 workspace 中的诊断信息' },
-    { '<space>dl', desc = '显示当前行的诊断信息' },
-    { '<space>j', desc = 'Quick Fix，Code Action' },
 
     -- Git
 
