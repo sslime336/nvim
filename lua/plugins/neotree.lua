@@ -19,7 +19,7 @@ require('neo-tree').setup {
             hide_gitignored = false, -- 显示被 Git 忽略的文件
         },
         follow_current_file = {
-            enabled = true,    -- 启用自动跟随功能（核心配置）
+            enabled = true,          -- 启用自动跟随功能（核心配置）
             leave_dirs_open = false, -- 可选：设置为 true 可保持中途目录展开，false 则只展开到文件所在父级
         },
     }

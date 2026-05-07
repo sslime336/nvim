@@ -20,6 +20,7 @@ vim.keymap.set('n', '<space>g', builtin.live_grep, {})
 -- telescope 拓展
 -- t.load_extension("todo-comments")
 -- t.load_extension('possession')
+-- t.load_extension('diffview')
 
 -- possession
 -- vim.keymap.set('n', '<space>s', ':Telescope possession list<CR>', {})
