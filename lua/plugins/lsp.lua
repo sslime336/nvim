@@ -23,22 +23,19 @@ require("lspsaga").setup(
         },
     }
 )
-local opt = {
-    silent = true, noremap = true
-}
-local utils = require('lib.utils')
-utils.map("n", "gD", "<cmd>Lspsaga peek_definition<CR>", '在悬浮窗查看定义', opt)
-utils.map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", '跳转到定义', opt)
-utils.map("n", "<C-k>", "<cmd>Lspsaga hover_doc<CR>", '显示注释文档，Ctrl-K 跳入文档', opt)
-utils.map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", '跳转到实现', opt)
-utils.map("n", "<space>rn", "<cmd>Lspsaga rename<CR>", '重命名', opt)
-utils.map("n", "<space>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", '显示当前行的错误信息', opt)
-utils.map("n", "<space>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", '显示当前工作空间的错误信息', opt) -- 当前 Workspace 的诊断信息
-utils.map("n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", '跳转到上一个错误', opt)
-utils.map("n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", '跳转到下一个错误', opt)
-utils.map("n", "gr", "<cmd>Lspsaga finder<CR>", '查找引用', opt)
-utils.map("n", "<space>j", "<cmd>Lspsaga code_action<CR>", 'Code Action', opt)
-utils.map("v", "<space>j", "<cmd>Lspsaga code_action<CR>", 'Code Action', opt)
+local keymapper = require('lib.keymapper')
+keymapper.norenmap("gD", "<cmd>Lspsaga peek_definition<CR>", '在悬浮窗查看定义')
+keymapper.norenmap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>", '跳转到定义')
+keymapper.norenmap("<C-k>", "<cmd>Lspsaga hover_doc<CR>", '显示注释文档，Ctrl-K 跳入文档')
+keymapper.norenmap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", '跳转到实现')
+keymapper.norenmap("<space>rn", "<cmd>Lspsaga rename<CR>", '重命名')
+keymapper.norenmap("<space>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", '显示当前行的错误信息')
+keymapper.norenmap("<space>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", '显示当前工作空间的错误信息') -- 当前 Workspace 的诊断信息
+keymapper.norenmap("gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", '跳转到上一个错误')
+keymapper.norenmap("gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", '跳转到下一个错误')
+keymapper.norenmap("gr", "<cmd>Lspsaga finder<CR>", '查找引用')
+keymapper.norenmap("<space>j", "<cmd>Lspsaga code_action<CR>", 'Code Action')
+keymapper.norenmap("<space>j", "<cmd>Lspsaga code_action<CR>", 'Code Action')
 
 -- 跳转到上一个 ERROR 级别的诊断
 vim.keymap.set('n', '[e', function()
