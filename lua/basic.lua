@@ -23,10 +23,16 @@ vim.o.shiftwidth = 4   -- 每个 tab 会插入 4 个空格
 vim.o.expandtab = true -- 将 tabs 换成 spaces
 
 -- 不生成备份文件，如 *.swp
-vim.o.backup = false
+vim.opt.swapfile = false -- 禁用 .swp 文件[reference:0]
+vim.opt.backup = false   -- 禁用备份文件 (~文件)
+vim.opt.undofile = false -- 禁用持久化撤销历史的存储
 
 -- 关闭搜索高亮
 vim.o.hlsearch = false
 
 -- 过长的行在显示上换行
 vim.opt.wrap = true
+
+-- 文件自动保存
+vim.opt.autowrite = true    -- 在执行 :next、:make 等命令时自动保存[reference:6]
+vim.opt.autowriteall = true -- 在更多操作（如 :quit）时触发自动保存[reference:7]

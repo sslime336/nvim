@@ -40,6 +40,16 @@ utils.map("n", "gr", "<cmd>Lspsaga finder<CR>", '查找引用', opt)
 utils.map("n", "<space>j", "<cmd>Lspsaga code_action<CR>", 'Code Action', opt)
 utils.map("v", "<space>j", "<cmd>Lspsaga code_action<CR>", 'Code Action', opt)
 
+-- 跳转到上一个 ERROR 级别的诊断
+vim.keymap.set('n', '[e', function()
+    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, { desc = '跳转到上一个错误' })
+
+-- 跳转到下一个 ERROR 级别的诊断
+vim.keymap.set('n', ']e', function()
+    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, { desc = '跳转到下一个错误' })
+
 -- 添加后缀类型提示
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
